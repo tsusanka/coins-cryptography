@@ -62,6 +62,18 @@
                 different alphabet <font color="grey">*</font></td>
             <td class="addr">SHA-256, RIPEMD-160</td>
         </tr>
+        <!-- Litecoin -->
+        <tr>
+            <td class="name"><b>Litecoin</b></td>
+            <td class="account">UTXO</td>
+            <td class="signing-alg">ECDSA</td>
+            <td class="curve">secp256k1</td>
+            <td class="hash" title="Litecoin uses scrypt for PoW, but for transactions signing it is still SHA-256.">SHA-256
+                <font color="grey">*</font>
+            </td>
+            <td class="addr-encoding">base58, bech32</td>
+            <td class="addr-hash">SHA-256, RIPEMD-160</td>
+        </tr>
         <!-- EOS -->
         <tr>
             <td class="name"><b>EOS</b></td>
@@ -77,20 +89,26 @@
             <td class="name" title="lol"><b>Bitcoin Cash</b></td>
             <td colspan="6" align="center" title="With the exception that Bitcoin Cash uses 'cashaddr' format for addresses, which is built on top of bech32.">Same as Bitcoin <font color="grey">*</font></td>
         </tr>
+        <!-- STELLAR -->
+        <tr>
+            <td class="name"><b>Stellar</b></td>
+            <td class="account">account</td>
+            <td class="signing-alg">EdDSA</td>
+            <td class="curve">ed25519</td>
+            <td class="hash" title="See footnote [2].">SHA-256 and SHA-512 in EdDSA <font color="grey">*</font>
+            </td>
+            <td class="addr-encoding">base32</td>
+            <td class="addr-hash">none</td>
+        </tr>
+        <!-- BINANCE -->
+        <tr>
+            <td class="name"><b>Binance</b></td>
+            <td colspan="6" align="center">Ethereum ERC-20 token</td>
+        </tr>
         <!-- TETHER -->
         <tr>
             <td class="name"><b>Tether</b></td>
             <td colspan="6" align="center">Bitcoin Omni layer / Ethereum ERC-20 token</td>
-        </tr>
-        <!-- Litecoin -->
-        <tr>
-            <td class="name"><b>Litecoin</b></td>
-            <td class="account">UTXO</td>
-            <td class="signing-alg">ECDSA</td>
-            <td class="curve">secp256k1</td>
-            <td class="hash" title="Litecoin uses scrypt for PoW, but for transactions signing it is still SHA-256.">SHA-256 <font color="grey">*</font></td>
-            <td class="addr-encoding">base58, bech32</td>
-            <td class="addr-hash">SHA-256, RIPEMD-160</td>
         </tr>
         <!-- TRON -->
         <tr>
@@ -101,16 +119,6 @@
             <td class="hash">SHA-256</td>
             <td class="addr-encoding">base58</td>
             <td class="addr-hash" title="Not the same as SHA-3. See footnote [1].">last 20 bytes of Keccak-256 <font color="grey">*</font></td>
-        </tr>
-        <!-- STELLAR -->
-        <tr>
-            <td class="name"><b>Stellar</b></td>
-            <td class="account">account</td>
-            <td class="signing-alg">EdDSA</td>
-            <td class="curve">ed25519</td>
-            <td class="hash" title="See footnote [2].">SHA-256 and SHA-512 in EdDSA <font color="grey">*</font></td>
-            <td class="addr-encoding">base32</td>
-            <td class="addr-hash">none</td>
         </tr>
         <!-- CARDANO -->
         <tr>
@@ -123,11 +131,6 @@
             <td class="addr-hash">none</td>
             <!-- checksum: crc32 -->
             <!-- binary format: CBOR -->
-        </tr>
-        <!-- BINANCE -->
-        <tr>
-            <td class="name"><b>Binance</b></td>
-            <td colspan="6" align="center">Ethereum ERC-20 token</td>
         </tr>
         <!-- MONERO -->
         <tr>
