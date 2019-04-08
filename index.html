@@ -21,7 +21,7 @@
     <h1>Cryptography behind top 20 cryptocurrencies</h1>
     <br>
 
-    <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display just by hovering on them.</p>
+    <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display by hovering on them.</p>
     <table class="tg">
         <tr>
             <th class="tg-fymr">Name</th>
@@ -82,8 +82,8 @@
             <td class="signing-alg">ECDSA</td>
             <td class="curve">secp256k1</td>
             <td class="hash">SHA-256</td>
-            <td class="addr-encoding" title="With EOS, valuables are held in accounts, not by the keys themselves and each account has at least two public/private key pairs. Accounts are registered and human-readable format is used to represent them (12 chars).">none <font color="grey">*</font></td>
-            <td class="addr-hash" title="With EOS, valuables are held in accounts, not by the keys themselves and each account has at least two public/private key pairs. Accounts are registered and human-readable format is used to represent them (12 chars).">none <font color="grey">*</font></td>
+            <td class="addr-encoding" title="With EOS, valuables are held in accounts where each account has at least two public/private key pairs. Accounts are registered and a human-readable format is used to represent them (12 chars).">none <font color="grey">*</font></td>
+            <td class="addr-hash" title="With EOS, valuables are held in accounts where each account has at least two public/private key pairs. Accounts are registered and human-readable format is used to represent them (12 chars).">none <font color="grey">*</font></td>
         </tr>
         <!-- BCASH -->
         <tr>
@@ -159,7 +159,7 @@
             <td class="account">UTXO</td>
             <td class="signing-alg">ECDSA</td>
             <td class="curve">secp256k1</td>
-            <td class="hash" title="Dash uses X11 for PoW, but for transactions signing it is still SHA-256.">SHA-256 <font color="grey">*</font></td>
+            <td class="hash" title="Dash uses X11 for PoW, but for transactions signing it still uses SHA-256.">SHA-256 <font color="grey">*</font></td>
             <td class="addr-encoding">base58</td>
             <td class="addr-hash">SHA-256, RIPEMD-160</td>
         </tr>
@@ -209,7 +209,7 @@
             <td class="name"><b>Zcash</b></td>
             <td class="account">UTXO</td>
             <td class="signing-alg" title="ECDSA for transparent transactions.">ECDSA, zk-SNARKs <font color="grey">*</font></td>
-            <td class="curve" title="secp256k1 is used for the public (Bitcoin-like) transactions, Jubjub and BLS12-381 are used with zk-SNARKs for shielded (private) transactions.">secp256k1, Jubjub <font color="grey">*</font></td>
+            <td class="curve" title="secp256k1 is used for public (Bitcoin-like) transactions, Jubjub and BLS12-381 are used with zk-SNARKs for shielded (private) transactions.">secp256k1, Jubjub <font color="grey">*</font></td>
             <td class="hash">SHA-256</td>
             <td class="addr-encoding">base58, bech32</td>
             <td class="addr-hash">SHA-256, RIPEMD-160</td>
@@ -229,16 +229,16 @@
     <h2>Notes</h2>
     <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display just by hovering on them.</p>
     <ul>
-        <li>[1]: The Keccak hash function has won the SHA-3 competition and is therefore the underlying hash function in SHA-3. However, some modifications has been
-            introduced in the final stage of standardization, which lead to two <i>almost the same but not really</i> hash functions. Keccak: as introduced by its authors and SHA-3:
+        <li>[1]: The Keccak hash function has won the SHA-3 competition and is thus the underlying hash function in SHA-3. But, some modifications had been
+            introduced in the final stage of standardization, which lead to two <i>very similar but yet different</i> hash functions. Keccak: as introduced by its authors and SHA-3:
             as standardized in <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf">FIPS-202</a>. Many cryptocurrencies (such as Ethereum)
-            chose SHA-3 for their hashing algorithm, but did so just before the standard was finalised. This resulted in using the Keccak functions instead of what is now considered as SHA-3.
+            chose SHA-3 for their hashing algorithm, but did so before the standard was finalised. This resulted in them using the Keccak functions instead of what is now considered as SHA-3.
             <br> Source: <a href="https://en.wikipedia.org/wiki/SHA-3">Wikipedia</a>, 
             <a href="https://ethereum.stackexchange.com/questions/550/which-cryptographic-hash-function-does-ethereum-use">Ethereum SE</a>,
             <a href="https://ethereum.github.io/yellowpaper/paper.pdf">Ethereum yellow paper</a>
         </li>
         <li>[2]: EdDSA hashes the message internally before signing and this function can be chosen. The default is SHA-512.
-            Some cryptocurrencies are leaving this upto the EdDSA algorithm exclusively and do not hash the message beforehand. Some do. This table tries to list both,
+            Some cryptocurrencies are leaving this up to the EdDSA algorithm exclusively and do not hash the message beforehand. Some do. This table tries to list both,
             the "outter" hash that is used before inserting it into the algorithm and also the EdDSA's internal one.<br>
             Source: <a href="https://tools.ietf.org/html/rfc8032">RFC 8032</a>
         </li>
@@ -259,14 +259,14 @@
 
     <h2>Columns description</h2>
     <ul>
-        <li><b>Type</b> Describes if the cryptocurrency is based on the UTXO model or not. Transactions in the UTXO model always spend the whole input, with some of the coins returned as a change.
-            In account account-based model, there is no such mechanism and just a simple account book is used.</b>
+        <li><b>Type:</b> Whether the cryptocurrency is based on the UTXO model or not. Transactions in the UTXO model always spend the whole input, with some of the coins returned as a change.
+            In account-based model, there is no such mechanism and just a simple account book is used.</b>
         </li>
-        <li><b>Signing algorithm</b> What signing algorithm is used, all present coins use Elliptic Curve Cryptography.</li>
-        <li><b>Curve</b> What elliptic curve is used in the underlying signing algorithm.</li>
-        <li><b>Hash</b> What hash function is used to hash the transaction data, which are then signed.</li>
-        <li><b>Address encoding</b> What algorithm is used to encode the address.</li>
-        <li><b>Address hash</b> What hash function is used for addresses.</li>
+        <li><b>Signing algorithm:</b> What signing algorithm is being used, all present coins use Elliptic Curve Cryptography.</li>
+        <li><b>Curve:</b> What elliptic curve is being used in the underlying signing algorithm.</li>
+        <li><b>Hash:</b> What hash function is being used to hash the transaction data that are then signed.</li>
+        <li><b>Address encoding:</b> What algorithm is being used to encode the address.</li>
+        <li><b>Address hash:</b> What hash function is being used for addresses.</li>
     </ul>
 
     <br>
