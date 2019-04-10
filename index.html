@@ -229,16 +229,16 @@
     <h2>Notes</h2>
     <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display just by hovering on them.</p>
     <ul>
-        <li>[1]: The Keccak hash function has won the SHA-3 competition and is thus the underlying hash function in SHA-3. But, some modifications had been
-            introduced in the final stage of standardization, which lead to two <i>very similar but yet different</i> hash functions. Keccak: as introduced by its authors and SHA-3:
-            as standardized in <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf">FIPS-202</a>. Many cryptocurrencies (such as Ethereum)
-            chose SHA-3 for their hashing algorithm, but did so before the standard was finalised. This resulted in them using the Keccak functions instead of what is now considered as SHA-3.
+        <li>[1]: The Keccak hash function has won the SHA-3 competition and is thus the underlying hash function in SHA-3. However, some modifications had been
+            introduced in the final stage of standardization, which lead to two <i>very similar but yet different</i> hash functions with completely different outputs.
+            Keccak: as introduced by its authors; SHA-3: as standardized in <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf">FIPS-202</a>. Many cryptocurrencies (such as Ethereum)
+            chose SHA-3 for their hashing algorithm, but did so before the standard was finalised. This resulted in them using the Keccak function instead of what is now considered as SHA-3.
             <br> Source: <a href="https://en.wikipedia.org/wiki/SHA-3">Wikipedia</a>, 
             <a href="https://ethereum.stackexchange.com/questions/550/which-cryptographic-hash-function-does-ethereum-use">Ethereum SE</a>,
             <a href="https://ethereum.github.io/yellowpaper/paper.pdf">Ethereum yellow paper</a>
         </li>
         <li>[2]: EdDSA hashes the message internally before signing and this function can be chosen. The default is SHA-512.
-            Some cryptocurrencies are leaving this up to the EdDSA algorithm exclusively and do not hash the message beforehand. Some do. This table tries to list both,
+            Some cryptocurrencies are leaving this up to the EdDSA algorithm exclusively and do not hash the message beforehand. Others do. This summary tries to list both,
             the "outter" hash that is used before inserting it into the algorithm and also the EdDSA's internal one.<br>
             Source: <a href="https://tools.ietf.org/html/rfc8032">RFC 8032</a>
         </li>
@@ -251,7 +251,7 @@
                 href="https://pdfs.semanticscholar.org/4160/470c7f6cf05ffc81a98e8fd67fb0c84836ea.pdf">Borromean ring signatures</a>,
             <a href="https://eprint.iacr.org/2017/1066.pdf">Bulletproofs</a>
         </li>
-        <li>[4]: Vulnerabilities were found in the Curl hash function, causing several dispute between IOTA engineers and cryptographers.
+        <li>[4]: Vulnerabilities were found in the Curl hash function, causing several dispute between IOTA engineers and some cryptographers.
             <br> Source:
             <a href="https://medium.com/@neha/cryptographic-vulnerabilities-in-iota-9a6a9ddc4367">Cryptographic vulnerabilities in IOTA</a>,
             <a href="https://github.com/mit-dci/tangled-curl/blob/master/vuln-iota.md">IOTA Vulnerability Report</a>
@@ -262,7 +262,7 @@
         <li><b>Type:</b> Whether the cryptocurrency is based on the UTXO model or not. Transactions in the UTXO model always spend the whole input, with some of the coins returned as a change.
             In account-based model, there is no such mechanism and just a simple account book is used.</b>
         </li>
-        <li><b>Signing algorithm:</b> What signing algorithm is being used, all present coins use Elliptic Curve Cryptography.</li>
+        <li><b>Signing algorithm:</b> What signing algorithm is being used, all present cryptocurrencies use Elliptic Curve Cryptography.</li>
         <li><b>Curve:</b> What elliptic curve is being used in the underlying signing algorithm.</li>
         <li><b>Hash:</b> What hash function is being used to hash the transaction data that are then signed.</li>
         <li><b>Address encoding:</b> What algorithm is being used to encode the address.</li>
