@@ -1,27 +1,39 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="github-markdown.css">
-<title>Cryptography behind cryptocurrencies</title>
-<style>
-    .markdown-body {
-        box-sizing: border-box;
-        min-width: 200px;
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 45px;
-    }
-
-    @media (max-width: 767px) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="github-markdown.css">
+    <title>Cryptography behind cryptocurrencies</title>
+    <style>
         .markdown-body {
-            padding: 15px;
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
         }
-    }
-</style>
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+
+        table {
+            line-height: 1.2;
+        }
+    </style>
+</head>
+
+<body>
+
 <article class="markdown-body">
     <h1>Cryptography behind top 20 cryptocurrencies</h1>
     <br>
 
-    <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display by hovering on them.</p>
+    <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display by hovering
+        on them.</p>
     <table class="tg">
         <tr>
             <th class="tg-fymr">Name</th>
@@ -48,19 +60,30 @@
             <td class="account">account</td>
             <td class="signing-alg">ECDSA</td>
             <td class="curve">secp256k1</td>
-            <td class="hash" title="Not the same as SHA-3. See footnote [1].">Keccak-256 <font color="grey">*</font></td>
-            <td class="addr-encoding" title="Ethereum does not use any encoding for addresses, though it introduced checksums in EIP-55 based on capitalization of some letters in hex format of the public key.">none (just hex) <font color="grey">*</font></td>
-            <td class="addr-hash" title="Same as for transaction hash, this is not the same as SHA-3. See footnote [1].">last 20B of Keccak-256 <font color="grey">*</font></td>
+            <td class="hash" title="Not the same as SHA-3. See footnote [1].">Keccak-256 <font color="grey">*</font>
+            </td>
+            <td class="addr-encoding"
+                title="Ethereum does not use any encoding for addresses, though it introduced checksums in EIP-55 based on capitalization of some letters in hex format of the public key.">
+                none (just hex) <font color="grey">*</font>
+            </td>
+            <td class="addr-hash"
+                title="Same as for transaction hash, this is not the same as SHA-3. See footnote [1].">last 20B of
+                Keccak-256 <font color="grey">*</font>
+            </td>
         </tr>
         <!-- XRP -->
         <tr>
             <td class="name"><b>XRP</b></td>
             <td class="account">account</td>
-            <td class="signing" title="And EdDSA experimentally.">ECDSA <font color="grey">*</font></sub></td>
-            <td class="curve" title="And ed25519 experimentally.">secp256k1 <font color="grey">*</font></td>
+            <td class="signing" title="And EdDSA experimentally.">ECDSA <font color="grey">*</font>
+            </td>
+            <td class="curve" title="And ed25519 experimentally.">secp256k1 <font color="grey">*</font>
+            </td>
             <td class="hash">first half of SHA-512</td>
-            <td class="addr" title="Ripple uses base58, but works with different alphabet, because why not.">base58 with
-                different alphabet <font color="grey">*</font></td>
+            <td class="addr" title="Ripple uses base58, but works with different alphabet, because why not.">base58
+                with
+                different alphabet <font color="grey">*</font>
+            </td>
             <td class="addr">SHA-256, RIPEMD-160</td>
         </tr>
         <!-- Litecoin -->
@@ -69,7 +92,8 @@
             <td class="account">UTXO</td>
             <td class="signing-alg">ECDSA</td>
             <td class="curve">secp256k1</td>
-            <td class="hash" title="Litecoin uses scrypt for PoW, but for transactions signing it is still SHA-256.">SHA-256
+            <td class="hash"
+                title="Litecoin uses scrypt for PoW, but for transactions signing it is still SHA-256.">SHA-256
                 <font color="grey">*</font>
             </td>
             <td class="addr-encoding">base58, bech32</td>
@@ -82,13 +106,22 @@
             <td class="signing-alg">ECDSA</td>
             <td class="curve">secp256k1</td>
             <td class="hash">SHA-256</td>
-            <td class="addr-encoding" title="With EOS, valuables are held in accounts where each account has at least two public/private key pairs. Accounts are registered and a human-readable format is used to represent them (12 chars).">none <font color="grey">*</font></td>
-            <td class="addr-hash" title="With EOS, valuables are held in accounts where each account has at least two public/private key pairs. Accounts are registered and human-readable format is used to represent them (12 chars).">none <font color="grey">*</font></td>
+            <td class="addr-encoding"
+                title="With EOS, valuables are held in accounts where each account has at least two public/private key pairs. Accounts are registered and a human-readable format is used to represent them (12 chars).">
+                none <font color="grey">*</font>
+            </td>
+            <td class="addr-hash"
+                title="With EOS, valuables are held in accounts where each account has at least two public/private key pairs. Accounts are registered and human-readable format is used to represent them (12 chars).">
+                none <font color="grey">*</font>
+            </td>
         </tr>
         <!-- BCASH -->
         <tr>
             <td class="name" title="lol"><b>Bitcoin Cash</b></td>
-            <td colspan="6" align="center" title="With the exception that Bitcoin Cash uses 'cashaddr' format for addresses, which is built on top of bech32.">Same as Bitcoin <font color="grey">*</font></td>
+            <td colspan="6" align="center"
+                title="With the exception that Bitcoin Cash uses 'cashaddr' format for addresses, which is built on top of bech32.">
+                Same as Bitcoin <font color="grey">*</font>
+            </td>
         </tr>
         <!-- STELLAR -->
         <tr>
@@ -119,7 +152,9 @@
             <td class="curve">secp256k1</td>
             <td class="hash">SHA-256</td>
             <td class="addr-encoding">base58</td>
-            <td class="addr-hash" title="Not the same as SHA-3. See footnote [1].">last 20 bytes of Keccak-256 <font color="grey">*</font></td>
+            <td class="addr-hash" title="Not the same as SHA-3. See footnote [1].">last 20 bytes of Keccak-256 <font
+                    color="grey">*</font>
+            </td>
         </tr>
         <!-- CARDANO -->
         <tr>
@@ -127,7 +162,8 @@
             <td class="account">UTXO</td>
             <td class="signing-alg">EdDSA</td>
             <td class="curve">ed25519</td>
-            <td class="hash" title="See footnote [2].">none and SHA-512 in EdDSA <font color="grey">*</font></td>
+            <td class="hash" title="See footnote [2].">none and SHA-512 in EdDSA <font color="grey">*</font>
+            </td>
             <td class="addr-encoding">base58</td>
             <td class="addr-hash">none</td>
             <!-- checksum: crc32 -->
@@ -137,11 +173,16 @@
         <tr>
             <td class="name"><b>Monero</b></td>
             <td class="account">UTXO</td>
-            <td class="signing-alg" title="See footnote [3]."><i>it's complicated</i> <font color="grey">*</font></td>
+            <td class="signing-alg" title="See footnote [3]."><i>it's complicated</i>
+                <font color="grey">*</font>
+            </td>
             <td class="curve">ed25519</td>
-            <td class="hash" title="Not the same as SHA-3. See footnote [1].">Keccak-256 <font color="grey">*</font></td>
+            <td class="hash" title="Not the same as SHA-3. See footnote [1].">Keccak-256 <font color="grey">*</font>
+            </td>
             <td class="addr-encoding">base58</td>
-            <td class="addr-hash" title="Not the same as SHA-3. See footnote [1].">Keccak-256 <font color="grey">*</font></td>
+            <td class="addr-hash" title="Not the same as SHA-3. See footnote [1].">Keccak-256 <font color="grey">*
+                </font>
+            </td>
         </tr>
         <!-- IOTA -->
         <tr>
@@ -149,7 +190,9 @@
             <td class="account">UTXO</td>
             <td class="signing-alg">Winternitz one time signature scheme</td>
             <td class="curve" align="center">-</td>
-            <td class="hash" title="Their own creations. Kerl is somewhat based on Keccak. See footnote [4].">Curl, Kerl <font color="grey">*</font></td>
+            <td class="hash" title="Their own creations. Kerl is somewhat based on Keccak. See footnote [4].">Curl,
+                Kerl <font color="grey">*</font>
+            </td>
             <td class="addr-encoding">none</td>
             <td class="addr-hash">Kerl</td>
         </tr>
@@ -159,7 +202,9 @@
             <td class="account">UTXO</td>
             <td class="signing-alg">ECDSA</td>
             <td class="curve">secp256k1</td>
-            <td class="hash" title="Dash uses X11 for PoW, but for transactions signing it still uses SHA-256.">SHA-256 <font color="grey">*</font></td>
+            <td class="hash" title="Dash uses X11 for PoW, but for transactions signing it still uses SHA-256.">
+                SHA-256 <font color="grey">*</font>
+            </td>
             <td class="addr-encoding">base58</td>
             <td class="addr-hash">SHA-256, RIPEMD-160</td>
         </tr>
@@ -200,7 +245,9 @@
             <td class="account">account</td>
             <td class="signing-alg">EdDSA</td>
             <td class="curve">ed25519</td>
-            <td class="hash" title="See footnote [1] and [2].">none and Keccak-256 in EdDSA <font color="grey">*</font></td>
+            <td class="hash" title="See footnote [1] and [2].">none and Keccak-256 in EdDSA <font color="grey">*
+                </font>
+            </td>
             <td class="addr-encoding">base32</td>
             <td class="addr-hash">Keccak-256, RIPEMD-160</td>
         </tr>
@@ -208,8 +255,13 @@
         <tr>
             <td class="name"><b>Zcash</b></td>
             <td class="account">UTXO</td>
-            <td class="signing-alg" title="ECDSA for transparent transactions.">ECDSA, zk-SNARKs <font color="grey">*</font></td>
-            <td class="curve" title="secp256k1 is used for public (Bitcoin-like) transactions, Jubjub and BLS12-381 are used with zk-SNARKs for shielded (private) transactions.">secp256k1, Jubjub <font color="grey">*</font></td>
+            <td class="signing-alg" title="ECDSA for transparent transactions.">ECDSA, zk-SNARKs <font color="grey">
+                    *</font>
+            </td>
+            <td class="curve"
+                title="secp256k1 is used for public (Bitcoin-like) transactions, Jubjub and BLS12-381 are used with zk-SNARKs for shielded (private) transactions.">
+                secp256k1, Jubjub <font color="grey">*</font>
+            </td>
             <td class="hash">SHA-256</td>
             <td class="addr-encoding">base58, bech32</td>
             <td class="addr-hash">SHA-256, RIPEMD-160</td>
@@ -219,50 +271,72 @@
         <tr>
             <td class="name"><b>Tezos</b></td>
             <td class="account">account</td>
-            <td class="signing-alg" title="EdDSA is recommended by Tezos.">EdDSA, ECDSA <font color="grey">*</font></td>
+            <td class="signing-alg" title="EdDSA is recommended by Tezos.">EdDSA, ECDSA <font color="grey">*</font>
+            </td>
             <td class="curve">ed25519, secp256k1, secp256r1</td>
-            <td class="hash" title="See footnote [2].">BLAKE2 and SHA-512 in EdDSA <font color="grey">*</font></td>
+            <td class="hash" title="See footnote [2].">BLAKE2 and SHA-512 in EdDSA <font color="grey">*</font>
+            </td>
             <td class="addr-encoding">base58</td>
             <td class="addr-hash">BLAKE2</td>
         </tr>
     </table>
     <h2>Notes</h2>
-    <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display just by hovering on them.</p>
+    <p>Items marked with <font color="grey">*</font> have some additional notes, which you can display just by
+        hovering on them.</p>
     <ul>
-        <li>[1]: The Keccak hash function has won the SHA-3 competition and is thus the underlying hash function in SHA-3. However, some modifications had been
-            introduced in the final stage of standardization, which lead to two <i>very similar but yet different</i> hash functions with completely different outputs.
-            Keccak: as introduced by its authors; SHA-3: as standardized in <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf">FIPS-202</a>. Many cryptocurrencies (such as Ethereum)
-            chose SHA-3 for their hashing algorithm, but did so before the standard was finalised. This resulted in them using the Keccak function instead of what is now considered as SHA-3.
-            <br> Source: <a href="https://en.wikipedia.org/wiki/SHA-3">Wikipedia</a>, 
-            <a href="https://ethereum.stackexchange.com/questions/550/which-cryptographic-hash-function-does-ethereum-use">Ethereum SE</a>,
+        <li>[1]: The Keccak hash function has won the SHA-3 competition and is thus the underlying hash function in
+            SHA-3. However, some modifications had been
+            introduced in the final stage of standardization, which lead to two <i>very similar but yet
+                different</i> hash functions with completely different outputs.
+            Keccak: as introduced by its authors; SHA-3: as standardized in <a
+                href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf">FIPS-202</a>. Many cryptocurrencies
+            (such as Ethereum)
+            chose SHA-3 for their hashing algorithm, but did so before the standard was finalised. This resulted in
+            them using the Keccak function instead of what is now considered as SHA-3.
+            <br> Source: <a href="https://en.wikipedia.org/wiki/SHA-3">Wikipedia</a>,
+            <a
+                href="https://ethereum.stackexchange.com/questions/550/which-cryptographic-hash-function-does-ethereum-use">Ethereum
+                SE</a>,
             <a href="https://ethereum.github.io/yellowpaper/paper.pdf">Ethereum yellow paper</a>
         </li>
-        <li>[2]: EdDSA hashes the message internally before signing and this function can be chosen. The default is SHA-512.
-            Some cryptocurrencies are leaving this up to the EdDSA algorithm exclusively and do not hash the message beforehand. Others do. This summary tries to list both,
-            the "outter" hash that is used before inserting it into the algorithm and also the EdDSA's internal one.<br>
+        <li>[2]: EdDSA hashes the message internally before signing and this function can be chosen. The default is
+            SHA-512.
+            Some cryptocurrencies are leaving this up to the EdDSA algorithm exclusively and do not hash the message
+            beforehand. Others do. This summary tries to list both,
+            the "outter" hash that is used before inserting it into the algorithm and also the EdDSA's internal
+            one.<br>
             Source: <a href="https://tools.ietf.org/html/rfc8032">RFC 8032</a>
         </li>
-        <li>[3]: Monero transactions are based on Elliptic Curve Cryptography using curve Ed25519, but transaction inputs are signed with
-            so-called Multilayered Linkable Spontaneous Anonymous Group signatures (MLSAG), and output amounts (communicated to recipients via ECDH)
-            are concealed with Pedersen commitments and Borromean ring signatures (later replaced with Bulletproofs).
-            <br>Source: <a href="https://www.getmonero.org/library/Zero-to-Monero-1-0-0.pdf">From Zero To Monero</a>,
+        <li>[3]: Monero transactions are based on Elliptic Curve Cryptography using curve Ed25519, but transaction
+            inputs are signed with
+            so-called Multilayered Linkable Spontaneous Anonymous Group signatures (MLSAG), and output amounts
+            (communicated to recipients via ECDH)
+            are concealed with Pedersen commitments and Borromean ring signatures (later replaced with
+            Bulletproofs).
+            <br>Source: <a href="https://www.getmonero.org/library/Zero-to-Monero-1-0-0.pdf">From Zero To
+                Monero</a>,
             <a href="https://lab.getmonero.org/pubs/MRL-0005.pdf">Ring confidential transactions</a>,
             <a href="https://people.xiph.org/~greg/confidential_values.txt">Confidential transactions</a>, <a
-                href="https://pdfs.semanticscholar.org/4160/470c7f6cf05ffc81a98e8fd67fb0c84836ea.pdf">Borromean ring signatures</a>,
+                href="https://pdfs.semanticscholar.org/4160/470c7f6cf05ffc81a98e8fd67fb0c84836ea.pdf">Borromean ring
+                signatures</a>,
             <a href="https://eprint.iacr.org/2017/1066.pdf">Bulletproofs</a>
         </li>
-        <li>[4]: Vulnerabilities were found in the Curl hash function, causing several dispute between IOTA engineers and some cryptographers.
+        <li>[4]: Vulnerabilities were found in the Curl hash function, causing several dispute between IOTA
+            engineers and some cryptographers.
             <br> Source:
-            <a href="https://medium.com/@neha/cryptographic-vulnerabilities-in-iota-9a6a9ddc4367">Cryptographic vulnerabilities in IOTA</a>,
+            <a href="https://medium.com/@neha/cryptographic-vulnerabilities-in-iota-9a6a9ddc4367">Cryptographic
+                vulnerabilities in IOTA</a>,
             <a href="https://github.com/mit-dci/tangled-curl/blob/master/vuln-iota.md">IOTA Vulnerability Report</a>
     </ul>
 
     <h2>Columns description</h2>
     <ul>
-        <li><b>Type:</b> Whether the cryptocurrency is based on the UTXO model or not. Transactions in the UTXO model always spend the whole input, with some of the coins returned as a change.
-            In account-based model, there is no such mechanism and just a simple account book is used.</b>
+        <li><b>Type:</b> Whether the cryptocurrency is based on the UTXO model or not. Transactions in the UTXO
+            model always spend the whole input, with some of the coins returned as a change.
+            In account-based model, there is no such mechanism and just a simple account book is used.
         </li>
-        <li><b>Signing algorithm:</b> What signing algorithm is being used, all present cryptocurrencies use Elliptic Curve Cryptography.</li>
+        <li><b>Signing algorithm:</b> What signing algorithm is being used, all present cryptocurrencies use
+            Elliptic Curve Cryptography.</li>
         <li><b>Curve:</b> What elliptic curve is being used in the underlying signing algorithm.</li>
         <li><b>Hash:</b> What hash function is being used to hash the transaction data that are then signed.</li>
         <li><b>Address encoding:</b> What algorithm is being used to encode the address.</li>
@@ -282,3 +356,7 @@
     </ul>
 
 </article>
+
+</body>
+
+</html>
